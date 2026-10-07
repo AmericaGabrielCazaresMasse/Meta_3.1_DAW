@@ -1,0 +1,112 @@
+### Info de la API
+GET http://localhost:3000/
+
+### Obtener todas
+GET http://localhost:3000/api/tareas
+
+### Obtener todas en texto plano
+GET http://localhost:3000/api/tareas?formato=text
+
+### Obtener por ID
+GET http://localhost:3000/api/tareas/1
+
+### Obtener por ID inexistente (404)
+GET http://localhost:3000/api/tareas/999
+
+### Obtener por ID inválido (400)
+GET http://localhost:3000/api/tareas/abc
+
+### Buscar por título
+GET http://localhost:3000/api/tareas/buscar?q=express
+
+### Buscar en mayúsculas
+GET http://localhost:3000/api/tareas/buscar?q=EXPRESS
+
+### Buscar con coincidencia parcial
+GET http://localhost:3000/api/tareas/buscar?q=api
+
+### Buscar sin resultados
+GET http://localhost:3000/api/tareas/buscar?q=zzzz
+
+### Buscar sin parámetro q (400)
+GET http://localhost:3000/api/tareas/buscar
+
+### Crear
+POST http://localhost:3000/api/tareas
+Content-Type: application/json
+
+{
+  "titulo": "Nueva tarea",
+  "completada": false
+}
+
+### Crear sin título (400)
+POST http://localhost:3000/api/tareas
+Content-Type: application/json
+
+{
+  "completada": false
+}
+
+### Crear con tipo inválido (400)
+POST http://localhost:3000/api/tareas
+Content-Type: application/json
+
+{
+  "titulo": "Tarea",
+  "completada": "si"
+}
+
+### Actualizar completa
+PUT http://localhost:3000/api/tareas/2
+Content-Type: application/json
+
+{
+  "titulo": "Tarea actualizada",
+  "completada": true
+}
+
+### Actualizar completa sin título (400)
+PUT http://localhost:3000/api/tareas/2
+Content-Type: application/json
+
+{
+  "completada": true
+}
+
+### Actualizar completa inexistente (404)
+PUT http://localhost:3000/api/tareas/999
+Content-Type: application/json
+
+{
+  "titulo": "Tarea actualizada",
+  "completada": true
+}
+
+### Actualizar parcial
+PATCH http://localhost:3000/api/tareas/2
+Content-Type: application/json
+
+{
+  "completada": false
+}
+
+### Actualizar parcial sin campos (400)
+PATCH http://localhost:3000/api/tareas/2
+Content-Type: application/json
+
+{}
+
+### Actualizar parcial inexistente (404)
+PATCH http://localhost:3000/api/tareas/999
+Content-Type: application/json
+
+{
+  "completada": true
+}
+
+### Eliminar
+DELETE http://localhost:3000/api/tareas/3
+
+### Eliminar inexistente (404)
+DELETE http://localhost:3000/api/tareas/999
