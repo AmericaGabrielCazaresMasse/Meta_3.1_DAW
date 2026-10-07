@@ -182,6 +182,6 @@ El archivo [`test-collection.http`](test-collection.http) contiene una petición
  
 ![Error 404](capturas/error-404.png)
  
-## Autor
+### Alumno(a):
  Cazares Masse America Gabriel
  
