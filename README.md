@@ -20,7 +20,7 @@ API REST para la gestión de tareas, desarrollada con Express y organizada media
 En caso de que pnpm no funcione, intentar con npm
  
 ```bash
-git clone <>
+git clone <https://github.com/AmericaGabrielCazaresMasse/Meta_3.1_DAW>
 cd api-tareas-mvc
 pnpm install 
 ```
